@@ -1,6 +1,6 @@
-# FAN:STAGE - 랜딩페이지
+# FAN:STAGE - 음악 팬 커뮤니티 플랫폼
 
-팬이 만드는 음악 생태계, FAN:STAGE의 랜딩페이지입니다.
+팬이 만드는 음악 생태계, FAN:STAGE의 전체 스택 애플리케이션입니다.
 
 ## 프로젝트 소개
 
@@ -8,57 +8,201 @@ FAN:STAGE는 개성 있는 인디/신인 아티스트와 진짜 음악 팬을 �
 
 ## 기술 스택
 
+### 프론트엔드
 - **React 18** - UI 라이브러리
 - **Vite** - 빌드 도구
 - **Tailwind CSS** - 스타일링
-- **React Router** (필요시) - 라우팅
+- **React Router** - 라우팅
+- **Axios** - HTTP 클라이언트
+- **Context API** - 상태 관리
+
+### 백엔드
+- **Node.js** - 런타임 환경
+- **Express** - 웹 프레임워크
+- **MongoDB** - 데이터베이스
+- **Mongoose** - ODM
+- **JWT** - 인증
+- **bcryptjs** - 비밀번호 암호화
 
 ## 시작하기
 
+### 사전 요구사항
+
+- Node.js 18+ 
+- MongoDB (로컬 또는 MongoDB Atlas)
+
 ### 설치
 
+1. 저장소 클론 및 의존성 설치:
 ```bash
 npm install
 ```
 
-### 개발 서버 실행
+2. 환경 변수 설정:
+```bash
+# server/.env 파일 생성
+cp server/.env.example server/.env
 
+# .env 파일 수정 (필요시)
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/fanstage
+JWT_SECRET=your-secret-key-change-this-in-production
+NODE_ENV=development
+```
+
+3. 프론트엔드 환경 변수 설정:
+```bash
+# .env 파일 생성
+cp .env.example .env
+
+# .env 파일 수정
+VITE_API_URL=http://localhost:5000/api
+```
+
+### 실행
+
+**개발 모드:**
+
+터미널 1 - 백엔드 서버:
+```bash
+npm run server:dev
+```
+
+터미널 2 - 프론트엔드 개발 서버:
 ```bash
 npm run dev
 ```
 
-개발 서버가 실행되면 브라우저에서 `http://localhost:5173`으로 접속할 수 있습니다.
+- 프론트엔드: http://localhost:5173
+- 백엔드 API: http://localhost:5000
 
-### 빌드
+**프로덕션 빌드:**
 
 ```bash
+# 프론트엔드 빌드
 npm run build
+
+# 백엔드 실행
+npm run server
 ```
 
-빌드된 파일은 `dist` 폴더에 생성됩니다.
+## 주요 기능
 
-### 미리보기
+### MVP 기능 (구현 완료)
 
-```bash
-npm run preview
+1. **사용자 인증**
+   - 회원가입/로그인
+   - JWT 기반 인증
+   - 팬/아티스트 계정 구분
+
+2. **음악 스트리밍**
+   - 곡 업로드 (아티스트)
+   - 곡 재생 (백그라운드 재생 지원)
+   - 플레이리스트 생성/편집
+   - 재생 큐 관리
+
+3. **팬 큐레이션 피드**
+   - 플레이리스트 생성 시 자동 피드 노출
+   - 다른 팬의 큐레이션 보기
+   - 큐레이션 재생, 좋아요, 공유
+
+4. **아티스트 페이지 및 피드**
+   - 아티스트 프로필 관리
+   - 발표한 음악 목록
+   - 아티스트 피드 게시
+   - 팔로우 기능
+
+5. **연관 아티스트 추천**
+   - 협업 필터링 기반 추천
+   - 장르 기반 추천
+   - 사용자 취향 분석
+
+6. **팬 등급 시스템**
+   - 플레이리스트 생성/재생/좋아요 기반 점수
+   - 큐레이터 등급 (씨앗 → 새싹 → 꽃 → 나무 → 숲)
+   - 높은 등급 큐레이션 상위 노출
+
+7. **검색 기능**
+   - 아티스트 검색
+   - 곡 검색
+   - 플레이리스트 검색
+
+## API 엔드포인트
+
+### 인증
+- `POST /api/auth/register` - 회원가입
+- `POST /api/auth/login` - 로그인
+- `GET /api/auth/me` - 현재 사용자 정보
+
+### 사용자
+- `GET /api/users/:id` - 사용자 프로필
+- `PUT /api/users/:id` - 프로필 수정
+- `POST /api/users/:id/follow/:artistId` - 아티스트 팔로우/언팔로우
+
+### 아티스트
+- `GET /api/artists` - 아티스트 목록
+- `GET /api/artists/:id` - 아티스트 상세 정보
+- `POST /api/artists` - 아티스트 프로필 생성
+- `PUT /api/artists/:id` - 아티스트 프로필 수정
+- `POST /api/artists/:id/posts` - 아티스트 피드 게시
+
+### 곡
+- `GET /api/tracks` - 곡 목록
+- `GET /api/tracks/:id` - 곡 상세 정보
+- `POST /api/tracks` - 곡 업로드
+- `POST /api/tracks/:id/like` - 곡 좋아요/좋아요 취소
+
+### 플레이리스트
+- `GET /api/playlists` - 플레이리스트 피드
+- `GET /api/playlists/:id` - 플레이리스트 상세 정보
+- `POST /api/playlists` - 플레이리스트 생성
+- `PUT /api/playlists/:id` - 플레이리스트 수정
+- `DELETE /api/playlists/:id` - 플레이리스트 삭제
+- `POST /api/playlists/:id/like` - 플레이리스트 좋아요/좋아요 취소
+- `POST /api/playlists/:id/share` - 플레이리스트 공유
+
+### 추천
+- `GET /api/recommendations/artists` - 추천 아티스트
+- `GET /api/recommendations/tracks` - 추천 곡
+
+## 데이터베이스 스키마
+
+### Users
+- 사용자 정보, 큐레이터 등급, 팔로잉 아티스트, 좋아요한 곡/플레이리스트
+
+### Artists
+- 아티스트 프로필, 장르, 소셜 링크, 팔로워 수
+
+### Tracks
+- 곡 정보, 아티스트 ID, 오디오 URL, 재생/좋아요 수
+
+### Playlists
+- 플레이리스트 정보, 생성자, 트랙 목록, 노출 점수
+
+### Interactions
+- 사용자 상호작용 (좋아요, 재생, 팔로우, 공유)
+
+### ArtistPosts
+- 아티스트 피드 게시물
+
+## 프로젝트 구조
+
 ```
-
-## 주요 섹션
-
-1. **Hero 섹션** - 서비스 소개 및 핵심 가치 제안
-2. **문제 정의** - 아티스트와 팬의 페인포인트
-3. **솔루션** - FAN:STAGE의 해결 방법
-4. **핵심 기능** - 주요 기능 소개
-5. **차별화 포인트** - 경쟁사와의 차이
-6. **CTA** - 행동 유도
-7. **Footer** - 푸터 정보
-
-## 특징
-
-- 반응형 디자인 (모바일, 태블릿, 데스크톱 지원)
-- 현대적이고 아름다운 UI/UX
-- 부드러운 애니메이션 효과
-- 접근성 고려
+fanstage/
+├── server/                 # 백엔드
+│   ├── models/            # 데이터베이스 모델
+│   ├── routes/            # API 라우트
+│   ├── middleware/        # 미들웨어
+│   └── index.js           # 서버 진입점
+├── src/                   # 프론트엔드
+│   ├── components/        # 재사용 컴포넌트
+│   ├── pages/             # 페이지 컴포넌트
+│   ├── context/           # Context API
+│   ├── utils/             # 유틸리티 함수
+│   └── App.jsx            # 앱 진입점
+├── package.json
+└── README.md
+```
 
 ## 라이선스
 
