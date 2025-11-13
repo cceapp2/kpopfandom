@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAN:STAGE - 팬이 만드는 음악 생태계</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">FAN:STAGE</div>
+                <div class="nav-links">
+                    <a href="#features">기능</a>
+                    <a href="#why">차별점</a>
+                    <a href="#for-who">대상</a>
+                    <a href="#waitlist" class="btn-primary">사전 신청</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#features">기능</a>
+        <a href="#why">차별점</a>
+        <a href="#for-who">대상</a>
+        <a href="#waitlist" class="btn-primary">사전 신청</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    팬이 만드는<br>
+                    <span class="gradient-text">음악 생태계</span>
+                </h1>
+                <p class="hero-subtitle">
+                    당신이 발굴한 아티스트를 세상에 알리세요.<br>
+                    팬의 큐레이션이 곧 발견 알고리즘입니다.
+                </p>
+                <div class="hero-cta">
+                    <a href="#waitlist" class="btn-hero">사전 신청하기</a>
+                    <a href="#features" class="btn-secondary">자세히 알아보기</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">100K+</div>
+                        <div class="stat-label">신인 아티스트</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">음악 팬</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10M+</div>
+                        <div class="stat-label">큐레이션 곡</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">문제</span>
+                <h2 class="section-title">지금 음악 씬은 이렇습니다</h2>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🎤</div>
+                    <h3>아티스트의 고민</h3>
+                    <p>마케팅 비용 없이는 바이럴 불가능. 자신만의 색을 유지하기보다 유행 따라가기에 급급합니다.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💜</div>
+                    <h3>팬의 고민</h3>
+                    <p>좋아하는 아티스트를 응원하고 싶지만 효과적인 방법이 없습니다. 기존 SNS는 내 팔로워만 보는 닫힌 공간입니다.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔍</div>
+                    <h3>발견의 어려움</h3>
+                    <p>새로운 아티스트 발견 채널이 부족합니다. 알고리즘은 인기곡 중심, 진짜 보석은 묻혀버립니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <div class="solution-content">
+                <div class="solution-text">
+                    <span class="section-label">솔루션</span>
+                    <h2 class="section-title">FAN:STAGE의 답</h2>
+                    <p class="solution-description">
+                        팬이 직접 아티스트를 큐레이팅하고, 그 큐레이션이 다른 팬들에게 자동으로 노출됩니다. 
+                        자본 없는 인디 아티스트도 진짜 음악 팬의 응원으로 발견되고, 
+                        팬들은 자신이 발굴한 아티스트를 효과적으로 자랑할 수 있습니다.
+                    </p>
+                </div>
+                <div class="solution-visual">
+                    <div class="visual-circle"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">주요 기능</span>
+                <h2 class="section-title">어떻게 작동하나요?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">01</div>
+                    <div class="feature-icon">📝</div>
+                    <h3>팬 큐레이션 피드</h3>
+                    <p>플레이리스트를 만들면 자동으로 피드에 게시됩니다. 다른 팬들이 재생하고 좋아할수록 더 많이 노출됩니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">02</div>
+                    <div class="feature-icon">🎯</div>
+                    <h3>연관 아티스트 자동 추천</h3>
+                    <p>당신이 좋아한 아티스트를 기반으로 비슷한 취향의 팬들이 좋아한 신인 아티스트를 자동으로 추천합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">03</div>
+                    <div class="feature-icon">💬</div>
+                    <h3>아티스트 직접 소통</h3>
+                    <p>아티스트가 직접 피드를 작성하고 댓글로 소통합니다. 신곡 발표, 공연 소식을 실시간으로 공유합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">04</div>
+                    <div class="feature-icon">⭐</div>
+                    <h3>큐레이터 등급 시스템</h3>
+                    <p>활동에 따라 등급이 올라갑니다. 높은 등급의 큐레이션은 더 많이 노출되어 영향력을 발휘합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Different Section -->
+    <section class="why-different" id="why">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">차별점</span>
+                <h2 class="section-title">다른 플랫폼과 무엇이 다른가요?</h2>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>기존 스트리밍 플랫폼</h4>
+                    <ul class="comparison-list negative">
+                        <li>알고리즘 중심 추천</li>
+                        <li>인기곡 위주 노출</li>
+                        <li>커뮤니티 기능 약함</li>
+                        <li>신인 아티스트 발견 어려움</li>
+                    </ul>
+                </div>
+                <div class="comparison-card highlight">
+                    <h4>FAN:STAGE</h4>
+                    <ul class="comparison-list positive">
+                        <li>팬 큐레이션 = 알고리즘</li>
+                        <li>신인도 공평한 노출 기회</li>
+                        <li>음악 특화 커뮤니티</li>
+                        <li>아티스트 직접 소통</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4>SNS 플랫폼</h4>
+                    <ul class="comparison-list negative">
+                        <li>팔로워에게만 노출</li>
+                        <li>음악 플레이어 없음</li>
+                        <li>닫힌 공간</li>
+                        <li>음악 전문 기능 부재</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="target-audience" id="for-who">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">대상</span>
+                <h2 class="section-title">누구를 위한 플랫폼인가요?</h2>
+            </div>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-image fan"></div>
+                    <h3>음악 애호가 & 팬</h3>
+                    <p class="audience-age">20-35세</p>
+                    <ul class="audience-list">
+                        <li>인디/신인 아티스트 발굴에 관심</li>
+                        <li>자신만의 음악 취향 자랑 욕구</li>
+                        <li>SNS에서 음악 콘텐츠 공유 활발</li>
+                        <li>새로운 아티스트를 먼저 발견하고 싶은 분</li>
+                    </ul>
+                    <div class="audience-quote">
+                        "내가 발굴한 아티스트를 세상에 알리고 싶어요!"
+                    </div>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-image artist"></div>
+                    <h3>신인 & 인디 아티스트</h3>
+                    <p class="audience-age">All Ages</p>
+                    <ul class="audience-list">
+                        <li>자본력 없이 팬베이스 구축 필요</li>
+                        <li>독창적 음악성 유지하면서 노출 희망</li>
+                        <li>팬과 직접 소통하고 싶은 분</li>
+                        <li>진짜 음악 팬을 만나고 싶은 분</li>
+                    </ul>
+                    <div class="audience-quote">
+                        "유행 따라가지 않고도 팬을 만날 수 있어요!"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Insight Section -->
+    <section class="market-insight">
+        <div class="container">
+            <div class="insight-content">
+                <h2>팬덤 플랫폼 시장의 가능성</h2>
+                <div class="insight-stats">
+                    <div class="insight-stat">
+                        <div class="insight-number">293억 달러</div>
+                        <p>2025년 글로벌 음악 스트리밍 시장 규모</p>
+                    </div>
+                    <div class="insight-stat">
+                        <div class="insight-number">12.57%</div>
+                        <p>음악 시장 연평균 성장률 (2023-2028)</p>
+                    </div>
+                    <div class="insight-stat">
+                        <div class="insight-number">73%</div>
+                        <p>Z세대 중 자신을 팬이라고 밝힌 비율</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section class="waitlist" id="waitlist">
+        <div class="container">
+            <div class="waitlist-content">
+                <h2>FAN:STAGE와 함께<br>새로운 음악 생태계를 만들어가세요</h2>
+                <p>사전 신청하시면 출시 소식과 얼리버드 혜택을 가장 먼저 받아보실 수 있습니다.</p>
+                <form class="waitlist-form" id="waitlistForm">
+                    <div class="form-group">
+                        <input type="email" placeholder="이메일 주소를 입력하세요" required id="emailInput">
+                        <select id="userType" required>
+                            <option value="">가입 유형 선택</option>
+                            <option value="fan">음악 팬</option>
+                            <option value="artist">아티스트</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-waitlist">사전 신청하기</button>
+                </form>
+                <p class="waitlist-note">현재 <span id="waitlistCount">2,847</span>명이 대기 중입니다</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">FAN:STAGE</div>
+                    <p>팬이 만드는 음악 생태계</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>서비스</h4>
+                        <a href="#features">주요 기능</a>
+                        <a href="#why">차별점</a>
+                        <a href="#for-who">대상</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>회사</h4>
+                        <a href="#about">회사 소개</a>
+                        <a href="#contact">문의하기</a>
+                        <a href="#careers">채용</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>법적 고지</h4>
+                        <a href="#terms">이용약관</a>
+                        <a href="#privacy">개인정보처리방침</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FAN:STAGE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
