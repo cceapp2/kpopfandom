@@ -1,0 +1,23 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "\"개성 있는 인디/신인 아티스트들은 자본력 부족으로 유행 따라가기에 급급하고, 진짜 음악 팬들은 자신이 발굴한 아티스트를 효과적으로 응원하고 확산시킬 수 있는 플랫폼이 없다.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cceapp2/kpopfandom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cceapp2/kpopfandom/issues"
+  },
+  "homepage": "https://github.com/cceapp2/kpopfandom#readme",
+  "dependencies": {
+    "puppeteer": "^24.30.0"
+  }
+}
